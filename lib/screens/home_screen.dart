@@ -1,3 +1,4 @@
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -45,12 +46,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       height: 50,
                       width: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              fit: BoxFit.fitHeight, image: AssetImage("assets/images/img_1.png"))),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), image: const DecorationImage(fit: BoxFit.fitHeight, image: AssetImage("assets/images/img_1.png"))),
                     )
                   ],
+                ),
+                Gap(25),
+                Container(
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color(0xFFF4F6FD)),
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  child: Row(
+                    children: [
+                      const Icon(FluentSystemIcons.ic_fluent_search_regular),
+                      Text(
+                        "Search",
+                        style: Styles.headLineStyle4,
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
