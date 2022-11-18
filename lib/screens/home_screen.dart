@@ -1,3 +1,4 @@
+import 'package:booktickets/screens/ticket_view.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       height: 50,
                       width: 50,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), image: const DecorationImage(fit: BoxFit.fitHeight, image: AssetImage("assets/images/img_1.png"))),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              fit: BoxFit.fitHeight, image: AssetImage("assets/images/img_1.png"))),
                     )
                   ],
                 ),
@@ -64,9 +68,33 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+                Gap(40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Upcoming Flights", style: Styles.headLineStyle2),
+                    InkWell(
+                      onTap: () {
+                        print("You are tapped");
+                      },
+                      child: Text("View all",
+                          style: Styles.textStyle.copyWith(
+                            color: Styles.primaryColor,
+                          )),
+                    ),
+                  ],
+                ),
               ],
             ),
-          )
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children: [TicketView(), TicketView()],
+            ),
+          ),
         ],
       ),
     );
