@@ -1,3 +1,4 @@
+import 'package:booktickets/screens/hotels_screen.dart';
 import 'package:booktickets/screens/ticket_view.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/animation.dart';
@@ -94,6 +95,40 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: [TicketView(), TicketView()],
             ),
+          ),
+          Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hotels", style: Styles.headLineStyle2),
+                InkWell(
+                  onTap: () {
+                    print("You are tapped, hotels");
+                  },
+                  child: Text(
+                    "View all",
+                    style: Styles.textStyle.copyWith(
+                      color: Styles.primaryColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            child: Row(
+              children: [
+                HotelScreen(),
+                HotelScreen(),
+              ],
+            ),
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
           ),
         ],
       ),
