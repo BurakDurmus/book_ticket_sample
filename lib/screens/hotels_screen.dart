@@ -6,7 +6,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:gap/gap.dart';
 
 class HotelScreen extends StatelessWidget {
-  const HotelScreen({super.key});
+  final Map<String, dynamic> hotel;
+  const HotelScreen({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {

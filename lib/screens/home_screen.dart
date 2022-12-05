@@ -1,5 +1,6 @@
 import 'package:booktickets/screens/hotels_screen.dart';
 import 'package:booktickets/screens/ticket_view.dart';
+import 'package:booktickets/utils/app_info_list.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
@@ -122,10 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const Gap(15),
           SingleChildScrollView(
             child: Row(
-              children: [
-                HotelScreen(),
-                HotelScreen(),
-              ],
+              children: hotelList.map((hotel) => HotelScreen(hotel: hotel)).toList(),
             ),
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
